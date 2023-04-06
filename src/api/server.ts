@@ -22,12 +22,13 @@ export const server_calls = {
     },
 
     create: async (data: any = {}) => {
-        const response = await fetch(`https://plankton-app-46k8b.ondigitalocean.app/api/contacts`,
+        const response = await fetch(`https://skitter-sponge-zebu.glitch.me/api/drinks`,
         {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
                 'x-access-token': `bearer ${token}`,
+                'Access-Control-Allow-Origin' : '*',
             },
             body: JSON.stringify(data)
         })
@@ -60,7 +61,7 @@ export const server_calls = {
     },
 
     delete: async (id:string) => {
-        const response = await fetch(`https://skitter-sponge-zebu.glitch.me/api/drinks${id}`,
+        const response = await fetch(`https://skitter-sponge-zebu.glitch.me/api/drinks/${id}`,
         {
             method: "DELETE",
             headers: {

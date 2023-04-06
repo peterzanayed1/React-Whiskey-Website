@@ -7,25 +7,28 @@ interface RouteType {
     path : string,
     component : () => JSX.Element,
     name : string
+    protected: boolean
 }
 
 const routes: RouteType[] = [
-    {
-    path:"",
-    component : Home,
-    name : 'home screen'
-    },
-    {
-      path:"/Dashboard",
-      component : Dashboard,
-      name : 'Dashboard',
-      
-      },
-      {
-        path:"/About",
-        component : About,
-        name : 'About'
-        },
-  ]
+  {
+    path: "",
+    component: Home,
+    name: "Home Screen",
+    protected: false
+  },
+  {
+    path: "/dashboard",
+    component: Dashboard,
+    name: "Dashboard",
+    protected: true,
+  },
+  {
+      path: "/about",
+      component: About,
+      name: "About",
+      protected: false,
+  }
+];
 
-  export default routes
+export default routes

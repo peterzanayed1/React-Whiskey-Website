@@ -19,7 +19,7 @@ const contactform = (props:ContactFormProps) => {
         if (props.id && props.id.length > 0) {
             server_calls.update(props.id[0], data)
             console.log(`updated: ${data} ${props.id}`)
-            setTimeout(() => {window.location.reload()},100000);
+            setTimeout(() => {window.location.reload()},100);
             event.target.reset()
         } else{
             dispatch(choosebrand(data.brand))
@@ -28,7 +28,7 @@ const contactform = (props:ContactFormProps) => {
             dispatch(chooserating(data.rating))
 
             server_calls.create(store.getState())
-            setTimeout( () => {window.location.reload()}, 100000)
+            setTimeout( () => {window.location.reload()}, 100)
         }
     }
   return (
@@ -36,22 +36,22 @@ const contactform = (props:ContactFormProps) => {
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
                 <label htmlFor="brand">brand</label>
-                <Input {...register} name ='brand' placeholder='brand'/>
+                <Input {...register('brand')} name ='brand' placeholder='brand'/>
                 {/* add input component here*/}
             </div>
             <div>
                 <label htmlFor="type">type</label>
-                <Input {...register} name ='type' placeholder='type'/>
+                <Input {...register('type')} name ='type' placeholder='type'/>
                 {/* add input component here*/}
             </div>
             <div>
                 <label htmlFor="Price">price</label>
-                <Input {...register} name ='Price' placeholder='price'/>
+                <Input {...register('price')} name ='price' placeholder='price'/>
                 {/* add input component here*/}
             </div>
             <div>
                 <label htmlFor="rating">rating</label>
-                <Input {...register} name ='rating' placeholder='rating'/>
+                <Input {...register('rating')} name ='rating' placeholder='rating'/>
                 {/* add input component here*/}
             </div>
             <div className="flex p-1">

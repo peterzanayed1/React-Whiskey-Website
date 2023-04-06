@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit"
 const rootSlice = createSlice({
         name: "root",
         initialState: {
-            brand: "Brand",
+            brand: "brand",
             type: "type",
             price: "price",
             rating: "rating",
